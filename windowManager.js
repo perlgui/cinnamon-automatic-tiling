@@ -296,7 +296,7 @@ class ResizePopup extends St.Widget {
 
 var WindowManager = class WindowManager {
         MENU_ANIMATION_TIME = 150;
-        WORKSPACE_ANIMATION_TIME = 150;
+        WORKSPACE_ANIMATION_TIME = 600;
         TILE_PREVIEW_ANIMATION_TIME = 150;
         SIZE_CHANGE_ANIMATION_TIME = 120;
         MAP_ANIMATION_TIME = 120;
@@ -2794,7 +2794,7 @@ var WindowManager = class WindowManager {
                     x: window.origX + xDest,
                     y: window.origY + yDest,
                     duration: this.WORKSPACE_ANIMATION_TIME * this.window_effect_multiplier,
-                    mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+                    mode: Clutter.AnimationMode.EASE_IN_OUT_QUAD,
                     onComplete: () => finish_switch_workspace(window)
                 });
             } else if (window.get_workspace() === to) {
@@ -2809,7 +2809,7 @@ var WindowManager = class WindowManager {
                     x: window.origX,
                     y: window.origY,
                     duration: this.WORKSPACE_ANIMATION_TIME * this.window_effect_multiplier,
-                    mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+                    mode: Clutter.AnimationMode.EASE_IN_OUT_QUAD,
                     onComplete: () => finish_switch_workspace(window)
                 });
             }
@@ -2926,12 +2926,12 @@ var WindowManager = class WindowManager {
 
     moveToWorkspace(workspace, direction_hint) {
         let active = global.workspace_manager.get_active_workspace();
-        // if (workspace != active) {
-            // if (direction_hint)
-                // workspace.activate_with_direction_hint(direction_hint, global.get_current_time());
-            // else
+        if (workspace != active) {
+            if (direction_hint)
+                workspace.activate_with_direction_hint(direction_hint, global.get_current_time());
+            else
                 workspace.activate(global.get_current_time());
-        // }
+        }
     }
 
     _showWorkspaceSwitcher(display, window, binding) {
@@ -3955,12 +3955,12 @@ var WindowManager = class WindowManager {
 
     moveToWorkspace(workspace, direction_hint) {
         let active = global.workspace_manager.get_active_workspace();
-        // if (workspace != active) {
-            // if (direction_hint)
-                // workspace.activate_with_direction_hint(direction_hint, global.get_current_time());
-            // else
+        if (workspace != active) {
+            if (direction_hint)
+                workspace.activate_with_direction_hint(direction_hint, global.get_current_time());
+            else
                 workspace.activate(global.get_current_time());
-        // }
+        }
     }
 
     _showWorkspaceSwitcher(display, window, binding) {
