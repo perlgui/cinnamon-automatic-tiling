@@ -24,7 +24,7 @@ Automatic window tiling for the Cinnamon desktop environment (Linux Mint).
 
 2. Windows are automatically arranged/re-tiled when one or more tiles are minimized and unminimized.
 
-3. Tiles can be swapped by drag and drop.
+3. Tiles can be swapped with drag and drop.
 
 4. Resized tiles keep their size when switching workspaces (this is not stable enough yet but is working)
 
