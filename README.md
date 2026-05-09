@@ -2,6 +2,10 @@
 
 Automatic window tiling for the Cinnamon desktop environment (Linux Mint).
 
+![Screenshot](screenshots/5.png)
+
+![Screenshot](screenshots/6.png)
+
 Windows are automatically arranged when opened or closed:
 
 - **1 window** - fullscreen
@@ -56,6 +60,15 @@ After installation, restart Cinnamon:
 Then enable tiling in:
 
 > System Settings -> Windows -> Tiling Preferences
+
+
+![Screenshot](screenshots/1.png)
+
+![Screenshot](screenshots/2.png)
+
+![Screenshot](screenshots/3.png)
+
+![Screenshot](screenshots/4.png)
 
 ---
 
