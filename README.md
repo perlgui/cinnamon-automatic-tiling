@@ -12,7 +12,7 @@ Automatic window tiling for the Cinnamon desktop environment (Linux Mint).
 >
 > Unlike dedicated tiling compositors such as Hyprland or Niri, which run as the Wayland compositor itself and can override application size constraints at the protocol level, this implementation runs inside Cinnamon on top of the Muffin window manager. Muffin respects the minimum size hints that applications declare, so there is no way to force a window smaller than it allows.
 >
-> **The solution is to exclude these applications from tiling.** You can do this at runtime by right-clicking the titlebar and selecting *Exclude from Tiling*, or by adding the application's WM class to the exclusion list in System Settings -> Windows -> Tiling Preferences. Excluded windows float freely and do not participate in the automatic layout.
+> **The solution is to either exclude these applications from tiling or place/move them to another workspace.** You can exclude them at runtime by right-clicking the titlebar and selecting *Exclude from Tiling*, or by adding the application's WM class to the exclusion list in System Settings -> Windows -> Tiling Preferences. Excluded windows float freely and do not participate in the automatic layout.
 
 1. Windows are automatically arranged when opened or closed:
 
