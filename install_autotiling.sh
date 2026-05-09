@@ -37,26 +37,40 @@ CS_PY_DEST="/usr/share/cinnamon/cinnamon-settings/modules/cs_windows.py"
 # --------------------------------------------
 if [[ "${1:-}" == "--uninstall" ]]; then
     section "Uninstalling CinnamonAutoTiling"
+
+    # Pre-flight: check that at least one backup exists before touching anything
+    FOUND=0
+    for dest in "$SCHEMA_DEST" "$WM_JS_DEST" "$WMENU_JS_DEST" "$CS_PY_DEST"; do
+        backup="$BACKUP_DIR/$(basename "$dest").stock"
+        [[ -f "$backup" ]] && FOUND=$((FOUND+1))
+    done
+
+    if [[ $FOUND -eq 0 ]]; then
+        die "No backup files found in $BACKUP_DIR\n\nDid you install using this script? Backups are created automatically during install.\nIf you installed manually, restore the original files yourself, e.g.:\n  sudo apt install --reinstall cinnamon"
+    fi
+
     RESTORED=0
     for dest in "$SCHEMA_DEST" "$WM_JS_DEST" "$WMENU_JS_DEST" "$CS_PY_DEST"; do
-        backup="$BACKUP_DIR/$(basename $dest).stock"
+        backup="$BACKUP_DIR/$(basename "$dest").stock"
         if [[ -f "$backup" ]]; then
             cp "$backup" "$dest"
-            ok "Restored: $(basename $dest)"
+            ok "Restored: $(basename "$dest")"
             RESTORED=$((RESTORED+1))
         else
-            warn "No backup found for $(basename $dest) - skipping"
+            warn "No backup found for $(basename "$dest") - skipping"
         fi
     done
-    [[ $RESTORED -gt 0 ]] || die "No backup files found in $BACKUP_DIR"
+
     glib-compile-schemas /usr/share/glib-2.0/schemas/
     ok "Schemas recompiled."
+
     for key in auto-tile auto-tile-gap auto-tile-excludelist auto-tile-accent-color auto-tile-border-width; do
         sudo -u "$REAL_USER" gsettings reset org.cinnamon.muffin "$key" 2>/dev/null || true
     done
     ok "GSettings reset to defaults."
+
     echo ""
-    ok "Uninstall complete. Restart Cinnamon:"
+    ok "Uninstall complete ($RESTORED file(s) restored). Restart Cinnamon:"
     echo "   Right-click panel -> Troubleshoot -> Restart Cinnamon"
     exit 0
 fi
@@ -139,7 +153,7 @@ section "Step 3 - Installing windowMenu.js"
 cp "$SCRIPT_DIR/windowMenu.js" "$WMENU_JS_DEST"
 ok "windowMenu.js installed."
 
-# =-----------------------------------------
+# ------------------------------------------
 # Step 4 - Install settings UI
 # ------------------------------------------
 section "Step 4 - Installing cs_windows.py"
