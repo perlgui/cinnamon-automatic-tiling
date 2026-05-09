@@ -1,7 +1,7 @@
 #!/bin/bash
-# =============================================================================
-# CinnamonAutoTiling — Install Script
-# =============================================================================
+# -----------------------------------------------------------------
+# CinnamonAutoTiling - Install Script
+# -----------------------------------------------------------------
 # Installs CinnamonAutoTiling for Cinnamon 6.6.7 on Linux Mint 22.x
 #
 # USAGE:
@@ -9,7 +9,7 @@
 #
 # UNINSTALL:
 #   sudo bash install_autotiling.sh --uninstall
-# =============================================================================
+# ----------------------------------------------
 
 set -euo pipefail
 
@@ -32,9 +32,9 @@ WM_JS_DEST="/usr/share/cinnamon/js/ui/windowManager.js"
 WMENU_JS_DEST="/usr/share/cinnamon/js/ui/windowMenu.js"
 CS_PY_DEST="/usr/share/cinnamon/cinnamon-settings/modules/cs_windows.py"
 
-# =============================================================================
+# --------------------------------------------
 # Uninstall mode
-# =============================================================================
+# --------------------------------------------
 if [[ "${1:-}" == "--uninstall" ]]; then
     section "Uninstalling CinnamonAutoTiling"
     RESTORED=0
@@ -45,7 +45,7 @@ if [[ "${1:-}" == "--uninstall" ]]; then
             ok "Restored: $(basename $dest)"
             RESTORED=$((RESTORED+1))
         else
-            warn "No backup found for $(basename $dest) — skipping"
+            warn "No backup found for $(basename $dest) - skipping"
         fi
     done
     [[ $RESTORED -gt 0 ]] || die "No backup files found in $BACKUP_DIR"
@@ -57,13 +57,13 @@ if [[ "${1:-}" == "--uninstall" ]]; then
     ok "GSettings reset to defaults."
     echo ""
     ok "Uninstall complete. Restart Cinnamon:"
-    echo "   Right-click panel → Troubleshoot → Restart Cinnamon"
+    echo "   Right-click panel -> Troubleshoot -> Restart Cinnamon"
     exit 0
 fi
 
-# =============================================================================
+# -------------------------------
 # Check required source files
-# =============================================================================
+# -------------------------------
 section "Checking source files"
 
 MISSING=0
@@ -77,18 +77,18 @@ for f in "org.cinnamon.muffin.gschema.xml" "windowManager.js" "windowMenu.js" "c
 done
 [[ $MISSING -eq 0 ]] || die "One or more required files are missing from $SCRIPT_DIR"
 
-# =============================================================================
+# -----------------------------------
 # Check Cinnamon version
-# =============================================================================
+# -----------------------------------
 section "Checking Cinnamon version"
 CINNAMON_VER=$(cinnamon --version 2>/dev/null | awk '{print $2}' || echo "unknown")
 info "Cinnamon version: $CINNAMON_VER"
 MAJOR=$(echo "$CINNAMON_VER" | cut -d. -f1)
-[[ "$MAJOR" == "6" ]] || warn "This package was built for Cinnamon 6.6.7 — your version is $CINNAMON_VER"
+[[ "$MAJOR" == "6" ]] || warn "This package was built for Cinnamon 6.6.7 - your version is $CINNAMON_VER"
 
-# =============================================================================
+# --------------------------------
 # Back up stock files
-# =============================================================================
+# --------------------------------
 section "Backing up stock files"
 mkdir -p "$BACKUP_DIR"
 
@@ -110,10 +110,10 @@ backup_file() {
 [[ -f "$WMENU_JS_DEST" ]] && backup_file "$WMENU_JS_DEST"
 [[ -f "$CS_PY_DEST"    ]] && backup_file "$CS_PY_DEST"
 
-# =============================================================================
-# Step 1 — Install schema
-# =============================================================================
-section "Step 1 — Installing GSettings schema"
+# --------------------------------------------
+# Step 1 - Install schema
+# --------------------------------------------
+section "Step 1 - Installing GSettings schema"
 
 cp "$SCRIPT_DIR/org.cinnamon.muffin.gschema.xml" "$SCHEMA_DEST"
 glib-compile-schemas /usr/share/glib-2.0/schemas/
@@ -125,30 +125,30 @@ for key in auto-tile auto-tile-gap auto-tile-excludelist auto-tile-accent-color 
         || die "Key missing after schema install: $key"
 done
 
-# =============================================================================
-# Step 2 — Install windowManager.js
-# =============================================================================
-section "Step 2 — Installing windowManager.js"
+# ---------------------------------------------
+# Step 2 - Install windowManager.js
+# ---------------------------------------------
+section "Step 2 - Installing windowManager.js"
 cp "$SCRIPT_DIR/windowManager.js" "$WM_JS_DEST"
 ok "windowManager.js installed."
 
-# =============================================================================
-# Step 3 — Install windowMenu.js
-# =============================================================================
-section "Step 3 — Installing windowMenu.js"
+# -------------------------------------------------
+# Step 3 - Install windowMenu.js
+# -------------------------------------------------
+section "Step 3 - Installing windowMenu.js"
 cp "$SCRIPT_DIR/windowMenu.js" "$WMENU_JS_DEST"
 ok "windowMenu.js installed."
 
-# =============================================================================
-# Step 4 — Install settings UI
-# =============================================================================
-section "Step 4 — Installing cs_windows.py"
+# =-----------------------------------------
+# Step 4 - Install settings UI
+# ------------------------------------------
+section "Step 4 - Installing cs_windows.py"
 cp "$SCRIPT_DIR/cs_windows.py" "$CS_PY_DEST"
 ok "cs_windows.py installed."
 
-# =============================================================================
+# -----------------------------------------------------------------------
 # Done
-# =============================================================================
+# -----------------------------------------------------------------------
 echo ""
 echo -e "${GREEN}${BOLD}"
 echo "  ╔══════════════════════════════════════════════════════════════╗"

@@ -111,6 +111,8 @@ Right-click the titlebar of any window -> **Exclude from Tiling**. The exclusion
 | `Super + Arrow Up/Down` | Rotate/cycle tile layout |
 | `Super + Arrow Left/Right` | Mirror tiles |
 | `Super + Tab` | Change tile focus (select tiles) |
+| `Super + m` | Minimize tile |
+| `Super + w` | Close tile |
 | `Super + Shift + Arrow Left/Right` | Resize tiles |
 | `Ctrl + Alt + Arrow Left/Right` | Cycle/change workspaces horizontally |
 | `Super + Shift + Page Up/Down` | Cycle/change workspaces vertically when window effects are enabled, otherwise cycle/change workspaces horizontally |
