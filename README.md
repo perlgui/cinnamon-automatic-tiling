@@ -6,13 +6,19 @@ Automatic window tiling for the Cinnamon desktop environment (Linux Mint).
 
 ![Screenshot](screenshots/6.png)
 
-Windows are automatically arranged when opened or closed:
+1. Windows are automatically arranged when opened or closed:
 
 - **1 window** - fullscreen
 - **2 windows** - side by side (vertical split, togglable to horizontal)
 - **3 windows** - master + stack layout (mirrorable)
 - **4 windows** - 2×2 grid
 - **5+ windows** - overflow to the next workspace
+
+2. Windows are automatically arranged/re-tiled when one or more tiles are minimized and unminimized.
+
+3. Tiles can be swapped by drag and drop.
+
+4. Resized tiles keep their size when switching workspaces (this is not stable enough yet but is working)
 
 All layout behaviour is configurable from **System Settings -> Windows _ Tiling**.
 
