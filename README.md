@@ -1,4 +1,4 @@
-# CinnamonAutoTiling
+# Cinnamon Automatic Tiling v. 1.0 beta
 
 Automatic window tiling for the Cinnamon desktop environment (Linux Mint).
 
