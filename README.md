@@ -6,6 +6,14 @@ Automatic window tiling for the Cinnamon desktop environment (Linux Mint).
 
 ![Screenshot](screenshots/6.png)
 
+> **!!! Beta software -> expect rough edges.** This implementation is functional but still under development. Some behaviours may be unstable or incomplete, and improvements are planned.
+
+> **!!! Not all applications are suitable for automatic tiling.** Many applications enforce a minimum window size that is too large to fit in half (or a quarter) of the screen. When the tiling engine tries to resize them, they refuse to shrink beyond their minimum size constraint and end up overlapping other tiles. Common examples include Inkscape, GIMP, Gnome Terminal, Xfce4-terminal, and many other GUI-heavy apps.
+>
+> Unlike dedicated tiling compositors such as Hyprland or Niri, which run as the Wayland compositor itself and can override application size constraints at the protocol level, this implementation runs inside Cinnamon on top of the Muffin window manager. Muffin respects the minimum size hints that applications declare, so there is no way to force a window smaller than it allows.
+>
+> **The solution is to exclude these applications from tiling.** You can do this at runtime by right-clicking the titlebar and selecting *Exclude from Tiling*, or by adding the application's WM class to the exclusion list in System Settings -> Windows -> Tiling Preferences. Excluded windows float freely and do not participate in the automatic layout.
+
 1. Windows are automatically arranged when opened or closed:
 
 - **1 window** - fullscreen
@@ -16,7 +24,7 @@ Automatic window tiling for the Cinnamon desktop environment (Linux Mint).
 
 2. Windows are automatically arranged/re-tiled when one or more tiles are minimized and unminimized.
 
-3. Tiles can be swapped with drag and drop.
+3. Tiles can be swapped by drag and drop.
 
 4. Resized tiles keep their size when switching workspaces (this is not stable enough yet but is working)
 
