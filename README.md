@@ -16,11 +16,11 @@ Automatic window tiling for the Cinnamon desktop environment (Linux Mint).
 
 2. Windows are automatically arranged/re-tiled when one or more tiles are minimized and unminimized.
 
-3. Tiles can be swapped by drag and drop.
+3. Tiles can be swapped with drag and drop.
 
 4. Resized tiles keep their size when switching workspaces (this is not stable enough yet but is working)
 
-All layout behaviour is configurable from **System Settings -> Windows _ Tiling**.
+All layout behaviour is configurable from **System Settings -> Windows -> Tiling**.
 
 ---
 
@@ -47,6 +47,8 @@ Other Cinnamon 6.x versions may work but are untested. The installer will warn y
 ## Install
 
 ```bash
+git clone https://github.com/perlgui/cinnamon-automatic-tiling.git
+cd cinnamon-automatic-tiling
 sudo bash install_autotiling.sh
 ```
 
