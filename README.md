@@ -123,41 +123,43 @@ Subsequent installs skip the backup step so your originals are always preserved.
 
 - **1 window** -> fills the full screen (minus gaps and panels).
 
-<img width="3840" height="2160" alt="1" src="https://github.com/user-attachments/assets/057d681c-e5cb-450d-9aa9-78cf1e6272c5" />
+<img width="3840" height="2160" alt="1" src="https://github.com/user-attachments/assets/402804d4-0bf9-4fba-b741-11342e0ee2e1" />
+
 
 
 - **2 windows** -> both windows tile side by side at 1/2 screen each (vertical split, toggleable to horizontal).
 
-<img width="3840" height="2160" alt="2" src="https://github.com/user-attachments/assets/0e35223e-3549-480e-ba96-cf0388d05b12" />
+<img width="3840" height="2160" alt="2" src="https://github.com/user-attachments/assets/129425e3-2f1b-4447-822f-948752b6c9a9" />
+
 
 
 - **3 windows in grid layout** -> one 1/2-screen master tile and two 1/4-screen stack tiles (mirrorable).
 
-<img width="3840" height="2160" alt="3" src="https://github.com/user-attachments/assets/15a1d68a-91c2-473d-bb6c-132073417b97" />
+<img width="3840" height="2160" alt="3" src="https://github.com/user-attachments/assets/fa1f4991-3c6a-4258-b718-6462332d181b" />
 
-Resized:
-
-<img width="3840" height="2160" alt="8" src="https://github.com/user-attachments/assets/99a16e97-21ff-4c6a-ae13-33743ed0efda" />
+<img width="3840" height="2160" alt="3a" src="https://github.com/user-attachments/assets/341e9c08-d237-4680-9402-ff711198a541" />
 
 
 - **3 windows in column layout** -> three 1/3 identical tiles.
+- 
+<img width="3840" height="2160" alt="4" src="https://github.com/user-attachments/assets/cb901adb-b501-436b-a19f-7ceb6d49af98" />
 
-<img width="3840" height="2160" alt="4" src="https://github.com/user-attachments/assets/6344150c-c2f5-4ccc-b716-a9619678c7ed" />
-
-The central tile expanded:
-
-<img width="3840" height="2160" alt="7" src="https://github.com/user-attachments/assets/3ce14359-cec7-41ae-8c3a-4107fa3481d0" />
+<img width="3840" height="2160" alt="4a" src="https://github.com/user-attachments/assets/d3a8eca7-f503-42d6-8712-28c3f184ff6f" />
 
 
 - **4 windows in grid layout** -> all windows tile in a 2×2 grid, each covering 1/4 of the screen.
 
-<img width="3840" height="2160" alt="5" src="https://github.com/user-attachments/assets/eabaf1b0-e88b-4d30-b3bb-76cf2fed985c" />
+<img width="3840" height="2160" alt="5" src="https://github.com/user-attachments/assets/25c6976a-1318-4998-b05a-f1e7fa67e1bc" />
 
-<img width="3840" height="2160" alt="9" src="https://github.com/user-attachments/assets/0eafb1e0-2e2e-42e9-90c1-7e4b448f74a7" />
+<img width="3840" height="2160" alt="5a" src="https://github.com/user-attachments/assets/406efaf7-5415-44cf-9345-864a7ea58f1b" />
+
+
 
 - **4 windows in column layout** -> all windows tile side by side in columns, each covering 1/4 of the screen.
 
-<img width="3840" height="2160" alt="6" src="https://github.com/user-attachments/assets/2a4ce3b0-afb4-4059-84b4-74acf2f2bb18" />
+<img width="3840" height="2160" alt="6" src="https://github.com/user-attachments/assets/984412ae-637c-4896-83a9-12e4522e4d77" />
+
+<img width="3840" height="2160" alt="6b" src="https://github.com/user-attachments/assets/fe8b1d96-383e-46e7-98a1-5feaf8560134" />
 
 
 - **5th window and beyond** -> the newest window tiles with the three most recent windows; the oldest tiled window is automatically minimised. This continues for each subsequent window opened.
@@ -168,8 +170,7 @@ The same logic applies in reverse when unminimising: if space is available, wind
 
 Super+Y toggles tile preview stripe for easy moving of tiles from other workspaces
 
-<img width="3840" height="2160" alt="12" src="https://github.com/user-attachments/assets/f8c477de-89a2-47a1-8934-dd97af5e26b5" />
-
+<img width="3840" height="2160" alt="8" src="https://github.com/user-attachments/assets/525a5cdc-4912-40be-81bd-f37eee3f3540" />
 
 ---
 
